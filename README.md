@@ -1,2 +1,3 @@
 cs131
-add one line
+add one lin
+I learned VIM
