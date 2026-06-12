@@ -1,0 +1,18 @@
+Line 1: This line finds lines within the buisness.json file of the yelp data set that contain "state":"CA".
+Line 2: With only Californian businesses, this line keeps only the review_count field while removing the rest of the data via -o.
+Line 3: This line omits any characters (letters), resulting in only the digits from Line 2 staying.
+Line 4:  This line sorts the numbers numerically and reverses the order and then prints the first three lines (numbers) aka the three CA businesses with the highest reviews.
+B1: grep 'city:Santa Barbara' /data/yelp/yelp_academic_dataset_business.json
+B2: grep -c 'state:CA' /data/yelp/yelp_academic_dataset_business.json
+B3: grep - i "worth" /data/yelp/yelp_academic_dataset_review.json
+B4:grep -E 'coffee|café|cafe' /data/yelp/yelp_academic_dataset_business.json
+B5: grep -E "\"stars\":(4\.5|5\.0)" /data/yelp/yelp_academic_dataset_business.json
+B5: grep -E stars:5, /data/yelp/yelp_academic_dataset_review.json
+B7: grep -E [A-Za-z]*+@[A-Za-z]+.[A-Za-z]2 /data/yelp/yelp_academic_dataset_review.json B7: grep -E [A-Za-z]*+@[A-Za-z]+.[A-Za-z] /data/yelp/yelp_academic_dataset_review.json
+B8: grep -E [[:digit:]]{3}-[[:digit:]]{3}-[[:digit:]]{4} /data/yelp/yelp_academic_dataset_review.json
+B9: grep -E name:P[A-Za-z]* /data/yelp/yelp_academic_dataset_business.json
+B10: grep -E -ci "pizza" /data/yelp/yelp_academic_dataset_review.json
+B11: grep -n "service" /data/yelp/yelp_academic_dataset_review.json
+B12: grep -v "restaurants" /data/yelp/yelp_academic_dataset_review.json
+B13: Answer is first four lines of .txt file (apologies once more
+B14: grep '"city":"Santa Barbara"' /data/yelp/yelp_academic_dataset_business.json | grep -oE '"name":"[^"]+"' | grep -oE '"[^"]+"$' | tr -d '"' | sort

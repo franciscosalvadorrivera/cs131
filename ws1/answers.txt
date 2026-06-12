@@ -1,0 +1,18 @@
+size: 1048576, owner: ishigaki-cs3, time: Jun 8 10:47
+T1: pwd
+T2: ls ../data
+T3: file logs/app01.log (This command reports the conents)
+T3: file .env (This command reports the type)
+T4: ls -lhra
+T5: ls -ls logs
+T6: first line of this file (apologies)
+T7: ls data/Data*
+T8: ls [A-Z]*
+T9: ls logs/BACKUP.[0-9][0-9][0-9]
+T10: cp -r data/ backup/
+T11: mv data/readme.txt data/README.md
+T12: rm -ri backup/data
+T13: git init
+T13: git add answers.txt
+T13: git commit -m"linux basics challenge"
+T14: git clone https://github.com/franciscosalvadorrivera/cs131 
