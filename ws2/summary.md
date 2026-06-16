@@ -1,2 +1,1 @@
-# Summary
-Branch-specific update
+# Summary\nBranch-specific update\n
