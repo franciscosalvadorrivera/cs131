@@ -1,0 +1,21 @@
+Q1: echo "task: practice git" >> notes.md
+Q1: git commit -m "ws2: add task line"
+Q2: git log --oneline -3
+Q3: git log --oneline -1 (hash: e61f213)
+Q4: git revert e61f213
+Q5:
+ 1)git rm --cached bigdata.bin
+ 2)echo bigdata.bin >> .git ignore (and git add .gitignore)
+ 3)git commit --amend
+ 4)git push
+Q6: git switch -c feature-summary
+Q7: git add summary.md & git commit-m"Added summary.md per Q7"
+Q8: git diff main(diff --git a/ws2/summary.md b/ws2/summary.md)
+Q9: git switch main & git merge feature-summary (to confirm summary.md exists, I did ls and cat summary.md)
+Q10: git branch -d feature-summary
+Q11: git merge conflict-branch (file reported: ws2/summary.md)
+Q12: git diff
+Q13: vim summary.md (i to write and :wq to save)
+Q14: git add summary.md & git commit (confirmed with git log --oneline which provided)
+Q15: git fetch origin & git log HEAD..origin/main --oneline)
+Q16: git fetch does not merge remote changes with our working branch whereas git pull does.
