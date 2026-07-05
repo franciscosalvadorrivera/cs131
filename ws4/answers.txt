@@ -1,0 +1,42 @@
+https://gist.github.com/zachbrowne/8bc414c9f30192067831fafebd14255c#file-the-ultimate-bad-ass-bashrc-file-L329
+
+up()
+
+The up function provides the user a way to travel up a directory an x amount of times as opposed to typing something along the lines of ../../.. . The up function works by taking the number the user has input and assigns it to a variable called limit, which is used in a for loopthat runs the amount of times the user input. Inside the loop, one more iteration of the dots and slash are added (do d=$d/.. done) where it is than "cleaned up" via d=$(echo $d | sed 's/^\///' to remove the first slash via ^. Finally, the last part of the up function provides a fall back in the event a user fails to input a number (if [-z $d]; then) where the default is set to .. .Once all is done, cd $d is executed to jump the number of times a user specified or the default amount if no number was given.
+
+https://gist.github.com/zachbrowne/8bc414c9f30192067831fafebd14255c#file-the-ultimate-bad-ass-bashrc-file-L345
+
+cd ()
+This cd function differs from the original cd () function as it immediately executes an ls afterwards, effeictely turning two commonly used commands into a singular one. First and foremost, by writing cd (), it declares that we will overwrite the machine provided cd command with a custom one. Upon hitting enter, this function checks to see if a folder has been input from the user via if [ -n "$1" ]; then. If so, the built-in cd is used (builtin cd) followed by our folders name (passed by "$@") and then the ls is executed ( && ls). In all, the end result looks like: cd [name] && ls. In the event the user fails to provide a folder, the original cd is executed (builtin cd) but this time to the users home directory (~) which is followed by ls ot list all of the contents ( && ls).
+
+#T2
+
+https://github.com/franciscosalvadorrivera/cs131/blob/main/ws4/.bashrc#L123
+
+alias gs = 'git status'
+
+This is an alias for git status, to shorten the typing on a users end to it "initals" per say: gs.
+
+
+
+https://github.com/franciscosalvadorrivera/cs131/blob/main/ws4/.bashrc#L126
+
+cdl() {
+	if cd "$1"; then
+		ls -Fhl
+	else
+		echo "Not able to change to '$1'"
+	fi
+}
+
+This is a if-statement that will copy a directory and list its contents while taking advantage of ls's -F -h and -l, IF the directory exists. Else, a line will be printed out stating it was not able to change to [directory name here].
+
+
+
+https://github.com/franciscosalvadorrivera/cs131/blob/main/ws4/.bashrc#L135
+mkdcd() {
+	mkdir -p "$1"
+	cd "$1" 
+}
+
+This is a shell function that allows the user to make a directory and copy directly into it via mkdcd (short for: MaKe Directory, Copy Directory).
